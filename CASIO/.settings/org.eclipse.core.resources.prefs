@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebContent/in.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/main.jsp=UTF-8
+encoding//src/sendEmail/EmailListServlet.java=UTF-8
+encoding//src/sendEmail/MailUtilGmail.java=UTF-8
