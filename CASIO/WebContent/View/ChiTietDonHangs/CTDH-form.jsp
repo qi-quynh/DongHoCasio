@@ -12,18 +12,19 @@
 
 	<sql:setDataSource var="snapshot"
 		driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		url="jdbc:sqlserver://DESKTOP-3VBDDB3//SQLEXPRESS;integratedSecurity=True;databaseName=CASIO"
+		url="jdbc:sqlserver://localhost;integratedSecurity=True;databaseName=CASIO"
 		user="localhost" password="root" />
+
 
 
 	<sql:query dataSource="${snapshot}" var="listsp">
             SELECT * from SanPham;
          </sql:query>
-         
+
 	<sql:query dataSource="${snapshot}" var="listdonhang">
             SELECT * from DonHang;
          </sql:query>
-	
+
 	<div>
 		<h1>Chi tiết đơn hàng</h1>
 		<h2>
@@ -71,8 +72,11 @@
 			</tr>
 			<tr>
 				<th>Số lượng:</th>
-				<td><input type="number" name="soLuong" size="45"
-					value="<c:out value='${ctdh.soLuong}' />" /></td>
+				<td><input type="number" name="soLuong"
+					value="<c:out value='${ctdh.soLuong}' />" />
+					<p style="color: red">
+						<c:out value="${error.soLuong}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="Lưu" /></td>

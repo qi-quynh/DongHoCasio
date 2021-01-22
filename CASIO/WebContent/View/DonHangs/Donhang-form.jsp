@@ -11,9 +11,8 @@
 <body>
 	<sql:setDataSource var="snapshot"
 		driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		url="jdbc:sqlserver://DESKTOP-3VBDDB3//SQLEXPRESS;integratedSecurity=True;databaseName=CASIO"
+		url="jdbc:sqlserver://localhost;integratedSecurity=True;databaseName=CASIO"
 		user="localhost" password="root" />
-
 	<sql:query dataSource="${snapshot}" var="listkh">
             SELECT * from Users;
          </sql:query>
@@ -21,8 +20,8 @@
 		<h1>Đơn hàng</h1>
 		<h2>
 			<a href="DonHangServlet?action=new">Thêm đơn hàng</a>
-			&nbsp;&nbsp;&nbsp; 
-			<a href="DonHangServlet?action=list">Danh sách đơn hàng</a>
+			&nbsp;&nbsp;&nbsp; <a href="DonHangServlet?action=list">Danh sách
+				đơn hàng</a>
 		</h2>
 	</div>
 	<div align="center">
@@ -54,23 +53,28 @@
 			<tr>
 				<th>Họ tên người nhận:</th>
 				<td><input type="text" name="hoTen" size="45"
-					value="<c:out value='${donhang.hoTen}' />" /></td>
+					value="<c:out value='${donhang.hoTen}' />" />
+					<p style="color: red">
+						<c:out value="${error.hoTen}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Địa chỉ:</th>
 				<td><input type="text" name="diaChi" size="45"
-					value="<c:out value='${donhang.diaChi}' />" /></td>
+					value="<c:out value='${donhang.diaChi}' />" />
+					<p style="color: red">
+						<c:out value="${error.diaChi}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Số điện thoại:</th>
-				<td><input type="number" name="sdt" maxlength="10" size="45"
-					value="<c:out value='${donhang.sdt}' />" /></td>
+				<td><input type="text" name="sdt" maxlength="10" size="45"
+					value="<c:out value='${donhang.sdt}' />" />
+					<p style="color: red">
+						<c:out value="${error.sdt}"></c:out>
+					</p></td>
 			</tr>
-			<tr>
-				<th>Tổng tiền:</th>
-				<td><input type="text" name="tongTien" size="45"
-					value="<c:out value='${donhang.tongTien}' />" /></td>
-			</tr>
+
 			<tr>
 				<th>Trạng thái:</th>
 				<td><select name="trangThai">

@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Loại sản phẩm</title>
 </head>
 <body>
 	<div>
 		<h1>Loại sản phẩm</h1>
 		<h2>
-			<a href="LoaiSanPhamServlet?action=new">Thêm loại sản phẩm</a>
+			<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang
+				quản lý</a>
 			&nbsp;&nbsp;&nbsp; <a href="LoaiSanPhamServlet?action=list">Danh
 				sách loại sản phẩm</a>
 		</h2>
@@ -32,8 +33,10 @@
 			</caption>
 			<tr>
 				<th>Mã loại:</th>
-				<td><input type="text" name="maLoai" size="45" maxlength="10"
-					value="<c:out value='${loaisanpham.maLoai}' />" /></td>
+				<td><input type="text" name="maLoai" size="45"
+					value="<c:out value='${loaisanpham.maLoai}' />" />
+					<p style="color: red"><c:out value="${error.maLoai}"></c:out></p>
+					</td>
 			</tr>
 			<tr>
 				<th>Tình trạng:</th>

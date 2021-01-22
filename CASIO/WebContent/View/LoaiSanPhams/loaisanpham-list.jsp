@@ -5,14 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Loại sản phẩm</title>
 </head>
 <body>
 	<div>
 		<h1>Loại sản phẩm</h1>
 		<h2>
 			<a href="LoaiSanPhamServlet?action=new">Thêm loại sản phẩm</a>
-			&nbsp;&nbsp;&nbsp; <a href="LoaiSanPhamServlet?action=list">Danh sách loại sản phẩm</a>
+			&nbsp;&nbsp;&nbsp;<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang
+				quản lý</a>
 		</h2>
 	</div>
 	<div align="center">

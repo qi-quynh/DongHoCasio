@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Chương trình khuyến mãi</title>
 </head>
 <body>
 	<div>
 		<sql:setDataSource var="snapshot"
 			driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-			url="jdbc:sqlserver://DESKTOP-3VBDDB3//SQLEXPRESS;integratedSecurity=True;databaseName=CASIO"
+			url="jdbc:sqlserver://localhost;integratedSecurity=True;databaseName=CASIO"
 			user="localhost" password="root" />
 
 		<sql:query dataSource="${snapshot}" var="listkm">
@@ -25,11 +25,10 @@
 
 		<div></div>
 
-		<h1>Chi tiết khuyến mãi</h1>
+		<h1>Chương trình khuyến mãi</h1>
 		<h2>
-			<a href="CTKMServlet?action=new">Thêm chi tiết khuyến mai</a>
-			&nbsp;&nbsp;&nbsp; <a href="CTKMServlet?action=list">Danh sách
-				chi tiết khuyến mãi</a>
+			<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang quản lý</a> &nbsp;&nbsp;&nbsp;<a
+				href="CTKMServlet?action=list">Danh sách chi tiết khuyến mãi</a>
 		</h2>
 	</div>
 	<div align="center">
@@ -53,9 +52,9 @@
 				<th>Mã khuyến mãi:</th>
 				<td><select name="maKm">
 
-							<c:forEach var="km" items="${listkm.rows}">
-								<option value="<c:out value='${km.maKm}' />">${km.maKm}</option>
-							</c:forEach>
+						<c:forEach var="km" items="${listkm.rows}">
+							<option value="<c:out value='${km.maKm}' />">${km.maKm}</option>
+						</c:forEach>
 				</select></td>
 
 			</tr>
@@ -65,17 +64,20 @@
 				<th>Mã sản phẩm:</th>
 				<td><select name="maSp">
 
-							<c:forEach var="sp" items="${listsp.rows}">
-								<option value="<c:out value='${sp.maSp}' />">${sp.maSp}</option>
-							</c:forEach>
+						<c:forEach var="sp" items="${listsp.rows}">
+							<option value="<c:out value='${sp.maSp}' />">${sp.maSp}</option>
+						</c:forEach>
 				</select></td>
 
 			</tr>
 
 			<tr>
 				<th>Phần trăm khuyến mãi:</th>
-				<td><input type="number" name="phantram" size="45" max="100"
-					value="<c:out value='${ctkm.phantram}' />" /></td>
+				<td><input type="number" name="phanTram" size="45"
+					value="<c:out value='${ctkm.phanTram}' />" />
+					<p style="color: red">
+						<c:out value="${error.phantram}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="Lưu" /></td>

@@ -11,8 +11,7 @@
 <div>
 		<h1>Khách hàng</h1>
 		<h2>
-			<a href="UsersServlet?action=new">Thêm khách hàng</a> &nbsp;&nbsp;&nbsp; 
-			<a href="UsersServlet?action=list">Quản lý khách hàng</a>
+			<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang quản lý</a>
 		</h2>
 	</div>
 	<div align="center">

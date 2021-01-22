@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Thời gian khuyến mãi</title>
 </head>
 <body>
 <div>
-		<h1>Khuyến mãi</h1>
+		<h1>Thời gian khuyến mãi</h1>
 		<h2>
-			<a href="KhuyenMaiServlet?action=new">Thêm khuyến mai</a> &nbsp;&nbsp;&nbsp; 
+			<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang quản lý</a>
 			<a href="KhuyenMaiServlet?action=list">Danh sách khuyến mãi</a>
 		</h2>
 	</div>

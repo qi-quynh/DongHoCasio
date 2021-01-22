@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Sản phẩm</title>
 </head>
 <body>
 	<div>
 		<h1>Sản phẩm</h1>
 		<h2>
 			<a href="SanPhamServlet?action=new">Thêm sản phẩm</a>
-			&nbsp;&nbsp;&nbsp; <a href="SanPhamServlet?action=list">Danh sách
-				sản phẩm</a>
+			&nbsp;&nbsp;&nbsp; <a href="/ProjectWeb/Admin/mainadmin.jsp">Trang
+				quản lý</a>
 		</h2>
 	</div>
 	<div align="center">

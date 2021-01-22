@@ -6,14 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Sản phẩm</title>
 </head>
 <body>
 	<sql:setDataSource var="snapshot"
 		driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		url="jdbc:sqlserver://localhost;integratedSecurity=True;databaseName=CASIO"
-		user="." password="root" />
-
+		user="localhost" password="root" />
 
 	<sql:query dataSource="${snapshot}" var="listloaisp">
             SELECT * from LoaiSanPham;
@@ -22,7 +21,7 @@
 	<div>
 		<h1>Sản phẩm</h1>
 		<h2>
-			<a href="SanPhamServlet?action=new">Thêm sản phẩm</a>
+			<a href="/ProjectWeb/Admin/mainadmin.jsp">Trang quản lý</a>
 			&nbsp;&nbsp;&nbsp; <a href="SanPhamServlet?action=list">Danh sách
 				sản phẩm</a>
 		</h2>
@@ -44,7 +43,10 @@
 			<tr>
 				<th>Mã sản phẩm:</th>
 				<td><input type="text" name="maSp" size="45" maxlength="30"
-					value="<c:out value='${sanpham.maSp}' />" /></td>
+					value="<c:out value='${sanpham.maSp}' />" />
+					<p style="color: red">
+						<c:out value="${error.maSp}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Mã loại:</th>
@@ -64,17 +66,26 @@
 			<tr>
 				<th>Giá:</th>
 				<td><input type="text" name="gia" size="45"
-					value="<c:out value='${sanpham.gia}' />" /></td>
+					value="<c:out value='${sanpham.gia}' />" />
+					<p style="color: red">
+						<c:out value="${error.gia}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Số lượng kho:</th>
 				<td><input type="number" name="soLuongKho" size="45"
-					value="<c:out value='${sanpham.soLuongKho}' />" /></td>
+					value="<c:out value='${sanpham.soLuongKho}' />" />
+					<p style="color: red">
+						<c:out value="${error.soLuongKho}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Số lượng bán:</th>
 				<td><input type="number" name="soLuongBan" size="45"
-					value="<c:out value='${sanpham.soLuongBan}' />" /></td>
+					value="<c:out value='${sanpham.soLuongBan}' />" />
+					<p style="color: red">
+						<c:out value="${error.soLuongBan}"></c:out>
+					</p></td>
 			</tr>
 			<tr>
 				<th>Tính năng:</th>
